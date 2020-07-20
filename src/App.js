@@ -14,17 +14,17 @@ class App extends Component {
           {/* <p>
             Edit <code>src/App.js</code> and save to reload.
           </p> */}
-          {/* <a
+           {/* <a
             className="App-link"
             href="/add"
             target="_blank"
             rel="noopener noreferrer"
           >
          Add Employee
-          </a> */}
+          </a>  */}
           {/* <Link to="/add">Add Employee</Link> 
            */}
-            <h4><Link to="/add"><span  class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Go to Add User</Link></h4>
+            <h4><Link to="/add"><span  class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Add Employee</Link></h4>
         </header>
       </div>
     );
