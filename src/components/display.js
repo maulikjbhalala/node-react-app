@@ -58,7 +58,7 @@ class Display extends React.Component {
                     </div>
                     <div className="panel-body">
                     {/* <AddIcon/> */}
-                        <h4><Link to="/add"><span  class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Go to Add User</Link></h4>
+                        <h4><Link to="/add"><span  class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Add Employee</Link></h4>
                         <table padding='2' class="table table-stripe">
                             <thead>
                                 <tr style={{ color: 'DarkOrchid' }}>
