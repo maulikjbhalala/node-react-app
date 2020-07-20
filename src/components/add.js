@@ -76,83 +76,116 @@ class Add extends Component {
         let { empName, empDesg, empEmail, empDept } = this.state;
         // let deptArray=[];
         // deptArray=['Development', 'Designing', 'Marketing', 'Suport']
-        // return (
+        return (
 
-        //     //for local API
-        //     <div class="container">
-        //         <div class="panel panel-default">
-        //             <div class="panel-heading">
-        //                 <h3 class="panel-title">
-        //                     Add New Employee
-        //             </h3>
-        //             </div>
-        //             <div class="panel-body">
-        //                 <h4 ><Link to="/show"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Display Employees</Link></h4>
+            //for local API
+            <div class="container">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            Add New Employee
+                    </h3>
+                    </div>
+                    <div class="panel-body">
+                        <h4 ><Link to="/show"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Display Employees</Link></h4>
 
 
-        //                 <form onSubmit={this.onSubmit}>
-        //                     <div class="form-group">
-        //                         <label for="empName">Employee Name:</label>
-        //                         <input type="text" class="form-control" name="empName" value={empName} onChange={this.dataChange} placeholder="Enter Employee Name" />
-        //                     </div>
-        //                     <div class="form-group">
-        //                         <label for="empEmail">Employee Email:</label>
-        //                         <input type="email" class="form-control" name="empEmail" value={empEmail} onChange={this.dataChange} placeholder="Enter Employee Email Address" />
-        //                     </div>
-        //                     <div class="form-group">
-        //                         <label for="empDesg">Designation:</label>
-        //                         <input type="text" class="form-control" name="empDesg" value={empDesg} onChange={this.dataChange} placeholder="Enter Designation" />
-        //                     </div>
-        //                     <div class="form-group">
-        //                     <label for="empDept">Department:</label>
-        //                     {/* <select class="form-control"  value={empDept}>
-        //                          { deptArray.map((dept) => <option key={dept}  onChange={this.dataChange}>{dept}</option>)} 
-        //                     </select> */}
+                        <form onSubmit={this.onSubmit}>
+                            <div class="form-group">
+                                <label for="empName">Employee Name:</label>
+                                <input type="text" class="form-control" name="empName" value={empName} onChange={this.dataChange} placeholder="Enter Employee Name" />
+                            </div>
+                            <div class="form-group">
+                                <label for="empEmail">Employee Email:</label>
+                                <input type="email" class="form-control" name="empEmail" value={empEmail} onChange={this.dataChange} placeholder="Enter Employee Email Address" />
+                            </div>
+                            <div class="form-group">
+                                <label for="empDesg">Designation:</label>
+                                <input type="text" class="form-control" name="empDesg" value={empDesg} onChange={this.dataChange} placeholder="Enter Designation" />
+                            </div>
+                            <div class="form-group">
+                            <label for="empDept">Department:</label>
+                            {/* <select class="form-control"  value={empDept}>
+                                 { deptArray.map((dept) => <option key={dept}  onChange={this.dataChange}>{dept}</option>)} 
+                            </select> */}
                                
 
                             
-        //                         <input type="text" class="form-control" name="empDept" value={empDept} onChange={this.dataChange} placeholder="Enter Employee Deprtment" />
-        //                     </div>
+                                <input type="text" class="form-control" name="empDept" value={empDept} onChange={this.dataChange} placeholder="Enter Employee Deprtment" />
+                            </div>
 
 
             
-        //                     <button type="submit" disabled={!empEmail || !empName || !empDesg || !empDept } onClick={this.msgOnFill} class="btn btn-default">Submit</button>
-        //                 </form>
-        //             </div>
-        //         </div>
-        //     </div>
-        // );
+                            <button type="submit" disabled={!empEmail || !empName || !empDesg || !empDept } onClick={this.msgOnFill} class="btn btn-default">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        );
 
-        return(
-            <Container className="App">
-            <h2>Sign In</h2>
-            <Form className="form">
-              <Col>
-                <FormGroup>
-                  <Label>Email</Label>
-                  <Input
-                    type="email"
-                    name="email"
-                    id="exampleEmail"
-                    placeholder="myemail@email.com"
-                  />
-                </FormGroup>
-              </Col>
-              <Col>
-                <FormGroup>
-                  <Label for="examplePassword">Password</Label>
-                  <Input
-                    type="password"
-                    name="password"
-                    id="examplePassword"
-                    placeholder="********"
-                  />
-                </FormGroup>
-              </Col>
-              <Button>Submit</Button>
-            </Form>
-          </Container>
-        )
+        // return(
+        //     <Container className="App">
+
+        //     <h2>Add Employee</h2>
+        //     <h4 align='left'><Link to="/show"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Display Employees</Link></h4>
+        //     <Form className="form" onSubmit={this.onSubmit}>
+        //       <Col>
+        //         <FormGroup>
+        //           <Label>Name</Label>
+        //           <Input
+        //             type="text"
+        //             name="name"
+        //             id="name"
+        //             placeholder="Add Your Name"
+        //             value={empName}
+        //             onChange={this.dataChange}
+        //           />
+        //         </FormGroup>
+        //       </Col>
+        //       <Col>
+        //         <FormGroup>
+        //           <Label>Email</Label>
+        //           <Input
+        //             type="email"
+        //             name="email"
+        //             id="exampleEmail"
+        //             placeholder="Add Your Email"
+        //             value={empEmail}
+        //             onChange={this.dataChange}
+        //           />
+        //         </FormGroup>
+        //       </Col>
+        //       <Col>
+        //         <FormGroup>
+        //           <Label>Designation</Label>
+        //           <Input
+        //             type="text"
+        //             name="desg"
+        //             id="desg"
+        //             placeholder="Add Your Designation"
+        //             value={empDesg}
+        //             onChange={this.dataChange}
+        //           />
+        //         </FormGroup>
+        //       </Col>
+        //       <Col>
+        //         <FormGroup>
+        //           <Label>Department</Label>
+        //           <Input
+        //             type="text"
+        //             name="dept"
+        //             id="dept"
+        //             placeholder="Add Your Department"
+        //             value={empDept}
+        //             onChange={this.dataChange}
+        //           />
+        //         </FormGroup>
+        //       </Col>
+              
+        //       <Button disabled={!empEmail || !empName || !empDesg || !empDept } onClick={this.msgOnFill}>Add Employee</Button>
+        //     </Form>
+        //   </Container>
+        // )
     }
 }
 

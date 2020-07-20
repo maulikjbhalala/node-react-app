@@ -71,7 +71,7 @@ class Display extends React.Component {
                                     // <li key={user._id}>
                                     // {user._id}
                                     // </li>
-                                    <tr style={{ color: 'Lime' }} key={user._id} >
+                                    <tr style={{ color: 'brown' }} key={user._id} >
                                         <td>{user.empId}</td>
                                         <td>{user.empName}</td>
                                         <td >{user.empEmail}</td>
@@ -79,7 +79,7 @@ class Display extends React.Component {
                                         <td>{user.empDept}</td>
                                        {/* <td><a aria-current="true" class="active" href="/edit/">Display Employees</a></td> */}
                                        <td><Link to={'/edit/'+user._id}>Edit</Link></td>
-                                       <td><Link to={'/delete/'+user._id}><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>Delete</Link></td>
+                                       <td><Link to={'/delete/'+user._id}>Delete</Link></td>
                                     </tr>
                                 )}
                             </tbody>

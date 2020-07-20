@@ -80,7 +80,7 @@ class Edit extends Component {
                                 <input type="text" class="form-control" name="empDept" value={empDept} onChange={this.inputChange} placeholder="Enter Employee Deprtment" />
                             </div>
 
-                            <button type="submit" disabled={!empEmail || !empName || !empDesg || !empDept} onClick={this.msgOnFill} class="btn btn-default">Submit</button>
+                            <button type="submit" disabled={!empEmail || !empName || !empDesg || !empDept} onClick={this.msgOnFill} class="btn btn-default">Edit Employee</button>
                             
                         </form>
                     </div>
