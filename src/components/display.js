@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
 // import AddIcon from '@material-ui/icons/Add';
+// import Loader from './loader';
 
 class Display extends React.Component {
 
@@ -38,6 +39,15 @@ class Display extends React.Component {
     
 
     render() {
+    //     if (this.state.loading) return <div id="root">
+    //     <div class="divLoader">
+    //       <svg class="svgLoader" viewBox="0 0 1024 1024" width="10em" height="10em">
+    //         <path fill="lightblue"
+    //           d="PATH FOR THE LOADER ICON"
+    //         />
+    //       </svg>
+    //     </div>
+    //   </div> ;
         return (
             <div className="container">
                 <div className="panel panel-default">
@@ -67,7 +77,7 @@ class Display extends React.Component {
                             </thead>
                             <tbody>
 
-                                {!this.state.loading && this.state.users.map(user =>
+                                { this.state.users.map(user =>
                                     // <li key={user._id}>
                                     // {user._id}
                                     // </li>

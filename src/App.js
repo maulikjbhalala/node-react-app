@@ -22,7 +22,9 @@ class App extends Component {
           >
          Add Employee
           </a> */}
-          <Link to="/add">Add Employee</Link> 
+          {/* <Link to="/add">Add Employee</Link> 
+           */}
+            <h4><Link to="/add"><span  class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Go to Add User</Link></h4>
         </header>
       </div>
     );

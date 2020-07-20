@@ -3,11 +3,11 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-import {
-    Container, Col, Form,
-    FormGroup, Label, Input,
-    Button,
-  } from 'reactstrap';
+// import {
+//     Container, Col, Form,
+//     FormGroup, Label, Input,
+//     Button,
+//   } from 'reactstrap';
 
 class Add extends Component {
     constructor() {
