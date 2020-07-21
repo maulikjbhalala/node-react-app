@@ -1,11 +1,9 @@
 import React from 'react';
 import Axios from 'axios';
 
-
     class FilterClass extends React.Component{
         constructor()
         {
-
             super();
             this.state=
             {
@@ -15,13 +13,11 @@ import Axios from 'axios';
             this.filterFunc=this.filterFunc.bind(this);
             this.dataChange=this.dataChange.bind(this);
             this.nullInput=this.nullInput.bind(this);
-
         };
 
 
         filterFunc()
         {
-
             let emps = this.state.emps;
             let q = this.state.q;
         
@@ -29,14 +25,12 @@ import Axios from 'axios';
               return emp.empName.toLowerCase().indexOf(q) != -1;
             });
             this.setState({ emps: emps });
-         
         };
 
         dataChange(e)
         {
             let q = e.target.value.toLowerCase();
             this.setState({ q }, () => this.filterFunc());
-
         }
 
         componentWillMount()
@@ -59,33 +53,18 @@ import Axios from 'axios';
 
         nullInput(e)
         {
-
-            if(e.target.value.length===0 ||e.target.value===null || e.target.value===undefined)
+            console.log(e.target.value)
+            if(e.target.value==='' ||e.target.value.length===0 ||e.target.value===null || e.target.value===undefined)
             {
                 this.setState({
                     q:'',
+                    emps:this.state.emps
                 })
     
             }
-            else
-            {
-                Axios.get('http://localhost:5600/emp/').then((result)=>
-                {
-                    this.setState(
-                        {
-                            emps:result.data,
-                            q:e.target.value
-                        }
-                    )
-    
-                }).catch((Error)=>
-                {
-                    console.log(Error)
-                });
-            }
-           
-
+                window.location.reload(true);
         }
+
 
         render() {
              this.state.emps.map(emp => {
@@ -121,6 +100,8 @@ import Axios from 'axios';
                                 <input type="text" class="form-control" name="empName" value={this.state.q} onChange={this.dataChange} placeholder="Enter Employee Name to search here" />
                             </div>
                                 <button type="submit"  onClick={this.nullInput} class="btn btn-default">Reset</button>
+                                
+                                {/* <button type="submit" style={{marginBlock:'20 px',alignSelf:'right'}} onClick={this.nullInput} class="btn btn-default">Search</button> */}
                             </div>
 
 
