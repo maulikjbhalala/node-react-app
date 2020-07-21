@@ -32,12 +32,13 @@ class EmpView extends React.Component{
     render()
     {
         let {empDept,empId,empEmail,empName,empDesg,_id}=this.state.emp;
+       
         return(
             <div className="container">
             <div className="panel panel-default">
                 <div className="panel-heading">
                     <h3 className="panel-title">
-                        <center style={{ color: 'Blue' }}>Show Detail</center>
+                        <center style={{ color: 'Blue' }}>{empName}</center>
                     </h3>
                 </div>
                 <div>
