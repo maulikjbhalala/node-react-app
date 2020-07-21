@@ -69,8 +69,6 @@ class Add extends Component {
 
 
     render() {
-        //for heroku API
-        // let { name, email, password } = this.state;
 
         //for local API
         let { empName, empDesg, empEmail, empDept } = this.state;

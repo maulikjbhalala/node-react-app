@@ -1,0 +1,80 @@
+
+
+import React from 'react';
+import Axios from 'axios';
+import {Link} from 'react-router-dom';
+
+
+class EmpView extends React.Component{
+
+
+    constructor(props)
+    {
+        super(props);
+
+        this.state={
+            emp:{}
+        }
+        
+    };
+
+
+    componentWillMount()
+    {
+        Axios.get('http://localhost:5600/emp/' + this.props.match.params.id)
+        .then(res => {
+            this.setState({ emp: res.data });
+        });
+    };
+
+
+
+    render()
+    {
+        let {empDept,empId,empEmail,empName,empDesg,_id}=this.state.emp;
+        return(
+            <div className="container">
+            <div className="panel panel-default">
+                <div className="panel-heading">
+                    <h3 className="panel-title">
+                        <center style={{ color: 'Blue' }}>Show Detail</center>
+                    </h3>
+                </div>
+                <div>
+       
+       </div>
+                <div className="panel-body">
+                <h4 ><Link to="/show"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Display Employees</Link></h4>
+                    <table padding='2' class="table table-stripe">
+                        <thead>
+                            <tr style={{ color: 'DarkOrchid' }}>
+                                <th>Emp Id</th>
+                                <th>Emp Name</th>
+                                <th>Emp Email</th>
+                                <th>Emp Desg</th>
+                                <th>Emp Dept </th>
+                            </tr>
+                            <p></p>
+                        </thead>
+                        <tbody>
+                                <tr style={{ color: 'brown' }} key={_id} >
+                                    <td>{empId}</td>
+                                    <td>{empName}</td>
+                                    <td >{empEmail}</td>
+                                    <td>{empDesg}</td>
+                                    <td>{empDept}</td>
+                                </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+      
+       
+        </div>
+        );
+    }
+
+};
+
+
+export default EmpView;

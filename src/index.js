@@ -14,6 +14,7 @@ import Search from  './components/search';
 import Query from './components/query'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Filter from './components/filter';
+import EmpView from './components/empView';
 
 let routing = (
   <Router>
@@ -50,6 +51,7 @@ let routing = (
       <Route path='/demo' component={Demo} />
       <Route path='/edit/:id' component={Edit}/>
       <Route path='/delete/:id' component={Delete}/>
+      <Route path='/viewById/:id' component={EmpView}/>
       {/* <Route path='/search' component={Search} /> */}
       {/* <Router path='/search?q=' component={Query}/> */}
       <Route path='/filter' component={Filter}/>
