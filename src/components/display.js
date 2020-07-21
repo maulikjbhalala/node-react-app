@@ -17,9 +17,10 @@ class Display extends React.Component {
         super();
         this.state =
         {
-            users: [],
+            emps: [],
             loading: true
         };
+        this.filterTodo=this.filterTodo.bind(this);
     }
 
     componentWillMount() {
@@ -31,10 +32,24 @@ class Display extends React.Component {
 
         axios.get('http://localhost:5600/emp')
             .then(res => {
-                this.setState({ users: res.data, loading: false });
+                this.setState({ emps: res.data, loading: false });
             });
     };
 
+  
+    filterTodo(e)
+  {   
+     let  filterList = this.state.emps;
+     filterList = filterList.filter((item)=>
+    {
+        return item.toLowerCase().search(e.target.value)
+    });
+
+       this.setState({ 
+      emps: filterList,
+    });
+    
+  }
   
     
 
@@ -56,6 +71,12 @@ class Display extends React.Component {
                             <center style={{ color: 'Blue' }}>Show Employees</center>
                         </h3>
                     </div>
+                    <div>
+           <input type="text"
+               className="center-block"
+               placeholder="Filter here..."
+               onChange={this.filterTodo} />
+           </div>
                     <div className="panel-body">
                     {/* <AddIcon/> */}
                         <h4><Link to="/add"><span  class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Add Employee</Link></h4>
@@ -77,25 +98,27 @@ class Display extends React.Component {
                             </thead>
                             <tbody>
 
-                                { this.state.users.map(user =>
+                                { this.state.emps.map(emp =>
                                     // <li key={user._id}>
                                     // {user._id}
                                     // </li>
-                                    <tr style={{ color: 'brown' }} key={user._id} >
-                                        <td>{user.empId}</td>
-                                        <td>{user.empName}</td>
-                                        <td >{user.empEmail}</td>
-                                        <td>{user.empDesg}</td>
-                                        <td>{user.empDept}</td>
+                                    <tr style={{ color: 'brown' }} key={emp._id} >
+                                        <td>{emp.empId}</td>
+                                        <td>{emp.empName}</td>
+                                        <td >{emp.empEmail}</td>
+                                        <td>{emp.empDesg}</td>
+                                        <td>{emp.empDept}</td>
                                        {/* <td><a aria-current="true" class="active" href="/edit/">Display Employees</a></td> */}
-                                       <td><Link to={'/edit/'+user._id}>Edit</Link></td>
-                                       <td><Link to={'/delete/'+user._id}>Delete</Link></td>
+                                       <td><Link to={'/edit/'+emp._id}>Edit</Link></td>
+                                       <td><Link to={'/delete/'+emp._id}>Delete</Link></td>
                                     </tr>
                                 )}
                             </tbody>
                         </table>
                     </div>
                 </div>
+          
+           
             </div>
 
         )
