@@ -13,6 +13,7 @@ import Delete from './components/delete';
 import Search from  './components/search';
 import Query from './components/query'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Filter from './components/filter';
 
 let routing = (
   <Router>
@@ -34,6 +35,7 @@ let routing = (
           <li><a aria-current="true" class="active" href="/add">Add New Employee</a></li>
           {/* <Link to="/add">Add New User</Link> */}
           <li><a aria-current="true" class="active" href="/show">Display Employees</a></li>
+          <li><a aria-current="true" class="active" href="/filter">Search Employee</a></li>
           {/* <Link to="/show">Display Users</Link> */}
           {/* <li><a aria-current="true" class="active" href="/demo">Demo Component</a></li> */}
           {/* <NavLink to="/demo">Demo Component</NavLink> */}
@@ -50,6 +52,7 @@ let routing = (
       <Route path='/delete/:id' component={Delete}/>
       {/* <Route path='/search' component={Search} /> */}
       {/* <Router path='/search?q=' component={Query}/> */}
+      <Route path='/filter' component={Filter}/>
     </div>
   </Router>
 );

@@ -20,7 +20,6 @@ class Display extends React.Component {
             emps: [],
             loading: true
         };
-        this.filterTodo=this.filterTodo.bind(this);
     }
 
     componentWillMount() {
@@ -37,32 +36,13 @@ class Display extends React.Component {
     };
 
   
-    filterTodo(e)
-  {   
-     let  filterList = this.state.emps;
-     filterList = filterList.filter((item)=>
-    {
-        return item.toLowerCase().search(e.target.value)
-    });
-
-       this.setState({ 
-      emps: filterList,
-    });
-    
-  }
+   
   
     
+ 
 
     render() {
-    //     if (this.state.loading) return <div id="root">
-    //     <div class="divLoader">
-    //       <svg class="svgLoader" viewBox="0 0 1024 1024" width="10em" height="10em">
-    //         <path fill="lightblue"
-    //           d="PATH FOR THE LOADER ICON"
-    //         />
-    //       </svg>
-    //     </div>
-    //   </div> ;
+   
         return (
             <div className="container">
                 <div className="panel panel-default">
@@ -72,10 +52,7 @@ class Display extends React.Component {
                         </h3>
                     </div>
                     <div>
-           <input type="text"
-               className="center-block"
-               placeholder="Filter here..."
-               onChange={this.filterTodo} />
+           
            </div>
                     <div className="panel-body">
                     {/* <AddIcon/> */}
