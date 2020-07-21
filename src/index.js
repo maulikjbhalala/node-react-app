@@ -3,17 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import Display from './components/display';
-import Add from './components/add';
+import Display from './components/empDisplay';
+import Add from './components/empAdd';
 import { Route, Link, NavLink, BrowserRouter as Router } from 'react-router-dom'
 import Demo from './components/demoCom'
 // import QueryComponent from './components/paramsQuery';
-import Edit from './components/edit';
-import Delete from './components/delete';
+import Edit from './components/empEdit';
+import Delete from './components/empDelete';
 import Search from  './components/search';
 import Query from './components/query'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Filter from './components/filter';
+import Filter from './components/empFilter';
 import EmpView from './components/empView';
 
 let routing = (
