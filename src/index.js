@@ -26,7 +26,7 @@ let routing = (
           {/* <Link aria-current="true" to="/">Home</Link> */}
           {/* <li><a aria-current="true" class="active" href="/add">Add New User</a></li> */}
           {/* <Link to="/add">Add New User</Link> */}
-          {/* <li><a aria-current="true" class="active" href="/show">Display Users</a></li> */} */}
+          {/* <li><a aria-current="true" class="active" href="/show">Display Users</a></li>  */}
           {/* <Link to="/show">Display Users</Link> */}
           {/* <li><a aria-current="true" class="active" href="/demo">Demo Component</a></li> */}
 
@@ -45,8 +45,8 @@ let routing = (
         </ul>
       </div>
 
-      <Route exact path='/' component={App} />
-      <Route path='/add/' component={Add} />
+     <Route exact path='/' component={App} />
+       {/* <Route path='/add/' component={Add} /> */}
       <Route path='/show' component={Display} />
       <Route path='/demo' component={Demo} />
       <Route path='/edit/:id' component={Edit}/>
@@ -54,8 +54,9 @@ let routing = (
       <Route path='/viewById/:id' component={EmpView}/>
       {/* <Route path='/search' component={Search} /> */}
       {/* <Router path='/search?q=' component={Query}/> */}
-      <Route path='/filter' component={Filter}/>
-    </div>
+     <Route path='/filter' component={Filter}/>
+      <Router exact path='/view/' component={Query}/>
+   </div>
   </Router>
 );
 
@@ -67,6 +68,8 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
+
+// ReactDOM.render(<Query/>,document.getElementById('root'));
 
 
 

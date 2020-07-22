@@ -1,7 +1,8 @@
 import React from 'react';
 
 // import QueryString from 'querystring'
-import { URLSearchParams } from 'url';
+// import { URLSearchParams } from 'url';
+import Axios from 'axios';
 
 class QueryDemo extends React.Component{
 
@@ -9,37 +10,54 @@ class QueryDemo extends React.Component{
     {
         super();
         this.state={
-            queryData:''
-
+            emp:[]
         }
+    };
 
-    }
 
     componentWillMount()
     {
-        // let id = QueryString.stringify(this.props.location.query.id);
         let id=new URLSearchParams(window.location.search)
-        let data=id.get('id');
+        console.log("url is",id)
+        let data=(id.get('name'));
         console.log(data)
-        this.setState({
-            queryData:data
-        })
-        
-    }
+        Axios.get(`http://localhost:5600/emp?name=${data}`).then((result)=>
+        {
+                this.setState({
+                    emp:result.data
+                });
+        });
+    };
 
 
 
 
     render()
     {
-        let {queryData} =this.state;
         return(
-            <div>
-                {console.log(queryData)}
-                <p>User Id is{queryData}</p> 
-            </div>
+
+            <tbody>
+                <tr>
+                    <th>
+                      name
+                    </th>
+                    <th>
+                      email
+                    </th>
+                </tr>
+
+            { this.state.emp.map(emp =>
+                <tr style={{ color: 'brown' }} key={emp._id} >
+                    <td>{emp.empName}</td>
+                    <br></br>
+                    <td >{emp.empEmail}</td>
+                </tr>
+            )}
+        </tbody>
+
         )
     }
+
 };
 
 export default QueryDemo;

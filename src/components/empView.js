@@ -64,6 +64,7 @@ class EmpView extends React.Component{
                                     <td >{empEmail}</td>
                                     <td>{empDesg}</td>
                                     <td>{empDept}</td>
+                                    <h4 ><Link to={'/view?name='+empName}> go to employee</Link></h4>
                                 </tr>
                         </tbody>
                     </table>
