@@ -16,7 +16,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Filter from './components/empFilter';
 import EmpView from './components/empView';
 import Paginate from './components/empPagination';
-import EmpPaginate from './components/empPaginate';
 
 let routing = (
   <Router>
@@ -40,7 +39,7 @@ let routing = (
           <li><a aria-current="true" class="active" href="/show">Display Employees</a></li>
           <li><a aria-current="true" class="active" href="/filter">Search Employee</a></li>
           {/* <li><a aria-current="true" class="active" href="/page">Pagination</a></li> */}
-          <li><a aria-current="true" class="active" href="/pagination">Pagination</a></li>
+          {/* <li><a aria-current="true" class="active" href="/page">Pagination</a></li> */}
           {/* <Link to="/show">Display Users</Link> */}
           {/* <li><a aria-current="true" class="active" href="/demo">Demo Component</a></li> */}
           {/* <NavLink to="/demo">Demo Component</NavLink> */}
@@ -56,15 +55,16 @@ let routing = (
       <Route path='/edit/:id' component={Edit}/>
       <Route path='/delete/:id' component={Delete}/>
       <Route path='/viewById/:id' component={EmpView}/>
-      {/* <Route path='/search' component={Search} /> */}
-      {/* <Router path='/search?q=' component={Query}/> */}
      <Route path='/filter' component={Filter}/>
-      <Router exact path='/view/' component={Query}/>
-      <Router  path='/page' component={Paginate}/>
-      <Router  path='/pagination/' component={EmpPaginate}/>
+      <Route exact path='/view/' component={Query}/>
+      <Route  path='/page/' component={Paginate}/>
+
+
    </div>
   </Router>
 );
+
+
 
 
 

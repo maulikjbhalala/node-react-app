@@ -18,7 +18,6 @@ class EmpView extends React.Component{
         
     };
 
-
     componentWillMount()
     {
         Axios.get('http://localhost:5600/emp/' + this.props.match.params.id)
@@ -64,7 +63,8 @@ class EmpView extends React.Component{
                                     <td >{empEmail}</td>
                                     <td>{empDesg}</td>
                                     <td>{empDept}</td>
-                                    <h4 ><Link to={'/view?name='+empName}> go to employee</Link></h4>
+
+                                    <td><Link to={'/view?name='+empName}>View More</Link></td>
                                 </tr>
                         </tbody>
                     </table>
