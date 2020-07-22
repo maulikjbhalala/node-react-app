@@ -1,6 +1,5 @@
 import React from 'react';
 import Axios from 'axios';
-
     class FilterClass extends React.Component{
         constructor()
         {
@@ -22,7 +21,7 @@ import Axios from 'axios';
             let q = this.state.q;
         
             emps = emps.filter(function(emp) {
-              return emp.empName.toLowerCase().indexOf(q) != -1;
+              return (emp.empName.toLowerCase().indexOf(q) != -1) || (emp.empEmail.toLowerCase().indexOf(q) != -1);
             });
             this.setState({ emps: emps });
         };
@@ -67,30 +66,30 @@ import Axios from 'axios';
 
 
         render() {
-             this.state.emps.map(emp => {
-                return <table padding='2' class="table table-stripe">
-                <thead>
-                    <tr style={{ color: 'DarkOrchid' }}>
-                        <th>Emp Id</th>
-                        <th>Emp Name</th>
-                        <th>Emp Email</th>
-                        <th>Emp Desg</th>
-                        <th>Emp Dept </th>
-                    </tr>
-                    <p></p>
-                </thead>
-                <tbody>
+            //  this.state.emps.map(emp => {
+            //     return <table padding='2' class="table table-stripe">
+            //     <thead>
+            //         <tr style={{ color: 'DarkOrchid' }}>
+            //             <th>Emp Id</th>
+            //             <th>Emp Name</th>
+            //             <th>Emp Email</th>
+            //             <th>Emp Desg</th>
+            //             <th>Emp Dept </th>
+            //         </tr>
+            //         <p></p>
+            //     </thead>
+            //     <tbody>
 
-                        <tr style={{ color: 'brown' }} key={emp._id} >
-                            <td>{emp.empId}</td>
-                            <td>{emp.empName}</td>
-                            <td >{emp.empEmail}</td>
-                            <td>{emp.empDesg}</td>
-                            <td>{emp.empDept}</td>
-                        </tr>
-                </tbody>
-            </table>
-              });
+            //             <tr style={{ color: 'brown' }} key={emp._id} >
+            //                 <td>{emp.empId}</td>
+            //                 <td>{emp.empName}</td>
+            //                 <td >{emp.empEmail}</td>
+            //                 <td>{emp.empDesg}</td>
+            //                 <td>{emp.empDept}</td>
+            //             </tr>
+            //     </tbody>
+            // </table>
+            //   });
 
           
               return (

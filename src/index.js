@@ -15,6 +15,7 @@ import Query from './components/query'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Filter from './components/empFilter';
 import EmpView from './components/empView';
+import Paginate from './components/empPagination';
 
 let routing = (
   <Router>
@@ -37,6 +38,7 @@ let routing = (
           {/* <Link to="/add">Add New User</Link> */}
           <li><a aria-current="true" class="active" href="/show">Display Employees</a></li>
           <li><a aria-current="true" class="active" href="/filter">Search Employee</a></li>
+          <li><a aria-current="true" class="active" href="/page">Pagination</a></li>
           {/* <Link to="/show">Display Users</Link> */}
           {/* <li><a aria-current="true" class="active" href="/demo">Demo Component</a></li> */}
           {/* <NavLink to="/demo">Demo Component</NavLink> */}
@@ -56,6 +58,7 @@ let routing = (
       {/* <Router path='/search?q=' component={Query}/> */}
      <Route path='/filter' component={Filter}/>
       <Router exact path='/view/' component={Query}/>
+      <Router  path='/page' component={Paginate}/>
    </div>
   </Router>
 );

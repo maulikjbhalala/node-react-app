@@ -5,10 +5,10 @@ import {Link} from 'react-router-dom'
 
 class DeleteEmployee extends React.Component{
 
-constructor()
-{
-    super();
-};
+// constructor()
+// {
+//     super();
+// };
 
 
 
