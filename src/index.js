@@ -46,7 +46,7 @@ let routing = (
       </div>
 
      <Route exact path='/' component={App} />
-       {/* <Route path='/add/' component={Add} /> */}
+       <Route path='/add/' component={Add} />
       <Route path='/show' component={Display} />
       <Route path='/demo' component={Demo} />
       <Route path='/edit/:id' component={Edit}/>
