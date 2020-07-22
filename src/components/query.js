@@ -14,21 +14,31 @@ class QueryDemo extends React.Component{
         }
     };
 
-
     componentWillMount()
     {
         let id=new URLSearchParams(window.location.search)
-        console.log("url is",id)
         let data=(id.get('name'));
         console.log(data)
-        Axios.get(`http://localhost:5600/emp?name=${data}`).then((result)=>
+        if(id!==null || id!==undefined || data!==null || data!==undefined) 
         {
-                this.setState({
-                    emp:result.data
-                });
-        });
+            Axios.get(`http://localhost:5600/emp?name=${data}`).then((result)=>
+            {
+                    this.setState({
+                        emp:result.data
+                    });
+            });
+        }
+        else if(id===null || id===undefined || id.length===0 ||data==='' || data===undefined ||data===null ||data.length===0)
+        {
+            Axios.get('http://localhost:5600/emp').then((result)=>
+            {
+                    this.setState({
+                        emp:result.data
+                    });
+            });
+        }
+      
     };
-
 
 
 
