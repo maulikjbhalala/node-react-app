@@ -22,29 +22,13 @@ let routing = (
     <div>
       <div>
         <ul className="header">
-          {/* for heroku API */}
-          {/* <li ><a aria-current="true" class="active" href="/">Home</a></li>
-          {/* <Link aria-current="true" to="/">Home</Link> */}
-          {/* <li><a aria-current="true" class="active" href="/add">Add New User</a></li> */}
-          {/* <Link to="/add">Add New User</Link> */}
-          {/* <li><a aria-current="true" class="active" href="/show">Display Users</a></li>  */}
-          {/* <Link to="/show">Display Users</Link> */}
-          {/* <li><a aria-current="true" class="active" href="/demo">Demo Component</a></li> */}
+           <li ><a aria-current="true" class="active" href="/">Home</a></li>
 
-          {/* for local API */}
           <li ><a aria-current="true" class="active" href="/">Home</a></li>
-          {/* <Link aria-current="true" to="/">Home</Link> */}
-          <li><a aria-current="true" class="active" href="/add">Add New Employee</a></li>
-          {/* <Link to="/add">Add New User</Link> */}
-          <li><a aria-current="true" class="active" href="/show">Display Employees</a></li>
-          <li><a aria-current="true" class="active" href="/filter">Search Employee</a></li>
-          {/* <li><a aria-current="true" class="active" href="/page">Pagination</a></li> */}
-          {/* <li><a aria-current="true" class="active" href="/page">Pagination</a></li> */}
-          {/* <Link to="/show">Display Users</Link> */}
-          {/* <li><a aria-current="true" class="active" href="/demo">Demo Component</a></li> */}
-          {/* <NavLink to="/demo">Demo Component</NavLink> */}
-          {/* <li><a aria-current="true" class="active" href="/maulik">Query</a></li> */}
-          {/* <li><a aria-current="true" class="active" href="/search?q=">Search Employees</a></li> */}
+           <li><a aria-current="true" class="active" href="/add">Add New Employee</a></li> 
+           <li><a aria-current="true" class="active" href="/show">Display Employees</a></li> 
+           <li><a aria-current="true" class="active" href="/filter">Search Employee</a></li> 
+        <li><a aria-current="true" class="active" href="/page">Pagination</a></li> 
         </ul>
       </div>
 
@@ -57,7 +41,7 @@ let routing = (
       <Route path='/viewById/:id' component={EmpView}/>
      <Route path='/filter' component={Filter}/>
       <Route exact path='/view/' component={Query}/>
-      <Route  path='/page/' component={Paginate}/>
+      <Route  path='/page/:limit/:pageNo' component={Paginate}/>
 
 
    </div>
@@ -76,7 +60,6 @@ ReactDOM.render(
 
 
 // ReactDOM.render(<Query/>,document.getElementById('root'));
-
 
 
 

@@ -1,77 +1,114 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Axios from 'axios';
+import { Button } from 'reactstrap';
+import { ThemeConsumer } from 'react-bootstrap/esm/ThemeProvider';
 
-class PaginationEmp extends React.Component {
-    constructor(props) {
+class Pagi extends React.Component
+{
+
+
+    constructor(props)
+    {
         super(props);
-
-        this.state = {
-            pager: {},
-            emps: []
-        };
-    }
-
-    componentDidMount() {
-        this.loadPage();
-    }
-
-    componentDidUpdate() {
-        this.loadPage();
-    }
-
-    loadPage() {
-        const params = new URLSearchParams(window.location.search);
-        const page = parseInt(params.get('page')) || 1;
-        if (page !== this.state.pager.currentPage) {
-            Axios('http://localhost:5600/emp/page/'+this.props.match.params.pageNo+'/'+this.props.match.params.limit)
-                .then((result) => {
-                    this.setState({
-                         pager:{
-                            result
-                         },
-                         emps:result.data.employees
-                        });
-                });
+        this.state={
+            emps:[],
+            limit:5,
+            currentPage:0,
+            hasNext:"false"
         }
+    };
+
+    componentWillMount()
+    {
+
+        this.fetchEmployees()
     }
 
+     fetchEmployees()
+    {
+        Axios.get('http://localhost:5600/emp/page/'+this.props.match.params.limit+'/'+this.props.match.params.pageNo).then((result)=>
+        {
+          
+            this.setState({
+                emps:result.data.employees,
+                currentPage:this.props.match.params.pageNo,
+                hasNext:result.data.hasNext
+
+            })
+        });
+
+
+    };
+
+
+    nextPage() {
+        this.setState({
+            currentPage:this.state.currentPage-1
+        })
+    }
+    previousPage() {
+            this.setState({
+                currentPage:this.state.currentPage+1
+            })
+    }
+
+
+    
     render() {
-        const { pager, pageOfItems } = this.state;
+        let {emps}=this.state;
+        let {hasNext}=this.state;
         return (
-            <div className="card text-center m-3">
-                <h3 className="card-header">React + Node - Server Side Pagination Example</h3>
-                <div className="card-body">
-                    {pageOfItems.map(item =>
-                        <div key={item.id}>{item.name}</div>
-                    )}
+
+            <div >{hasNext==='true'? <div className="container" >
+            <div className="panel panel-default">
+                <div className="panel-heading">
+                    <h3 className="panel-title">
+                        <center style={{ color: 'Blue' }}>Show Employees</center>
+                    </h3>
                 </div>
-                <div className="card-footer pb-0 pt-3">
-                    {pager.pages && pager.pages.length &&
-                        <ul className="pagination">
-                            <li className={`page-item first-item ${pager.currentPage === 1 ? 'disabled' : ''}`}>
-                                <Link to={{ search: `?page=1` }} className="page-link">First</Link>
-                            </li>
-                            <li className={`page-item previous-item ${pager.currentPage === 1 ? 'disabled' : ''}`}>
-                                <Link to={{ search: `?page=${pager.currentPage - 1}` }} className="page-link">Previous</Link>
-                            </li>
-                            {pager.pages.map(page =>
-                                <li key={page} className={`page-item number-item ${pager.currentPage === page ? 'active' : ''}`}>
-                                    <Link to={{ search: `?page=${page}` }} className="page-link">{page}</Link>
-                                </li>
+                <div>
+       
+       </div>
+                <div className="panel-body">
+                    <table padding='2' class="table table-stripe">
+                        <thead>
+                            <tr style={{ color: 'DarkOrchid' }}>
+                                <th>Emp Name</th>
+                                <th>Emp Email</th>
+                            </tr>
+                            <p></p>
+                        </thead>
+                        <tbody>
+
+                            { emps.map(emp =>
+                                <tr style={{ color: 'brown' }} key={emp._id} >
+                                    <td>{emp.empName}</td>
+                                    <td >{emp.empEmail}</td>
+                                </tr>
                             )}
-                            <li className={`page-item next-item ${pager.currentPage === pager.totalPages ? 'disabled' : ''}`}>
-                                <Link to={{ search: `?page=${pager.currentPage + 1}` }} className="page-link">Next</Link>
-                            </li>
-                            <li className={`page-item last-item ${pager.currentPage === pager.totalPages ? 'disabled' : ''}`}>
-                                <Link to={{ search: `?page=${pager.totalPages}` }} className="page-link">Last</Link>
-                            </li>
-                        </ul>
-                    }                    
+                        </tbody>
+                    </table>
                 </div>
             </div>
-        );
-    }
-}
+            <div> 
+            <button onClick={this.nextPage}> Previous Page </button>
+            <br></br>
+            <button onClick={this.previousPage}> Next Page </button> 
+        </div>
+      
+       
+        </div>:<center style={{color:'red'}}>No more data available</center>}
+        
+        
+        </div>
+           
 
-export default PaginationEmp;
+        )
+       
+         
+    }
+};
+
+
+
+export default Pagi;
