@@ -24,7 +24,6 @@ let routing = (
         <ul className="header">
            <li ><a aria-current="true" class="active" href="/">Home</a></li>
 
-          <li ><a aria-current="true" class="active" href="/">Home</a></li>
            <li><a aria-current="true" class="active" href="/add">Add New Employee</a></li> 
            <li><a aria-current="true" class="active" href="/show">Display Employees</a></li> 
            <li><a aria-current="true" class="active" href="/filter">Search Employee</a></li> 

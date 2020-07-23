@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 // import ReactDOM from 'react-dom';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Select from 'react-select';
+import Axios from 'axios';
+
 
 // import {
 //     Container, Col, Form,
@@ -12,12 +15,13 @@ import { Link } from 'react-router-dom';
 class Add extends Component {
     constructor() {
         super();
-        //for local API
         this.state = {
             empName: '',
             empEmail: '',
             empDesg: '',
-            empDept: ''
+            empDept: '',
+            deptArr:[],
+            // selectedData:''
         }
         this.onSubmit = this.onSubmit.bind(this);
         this.dataChange = this.dataChange.bind(this);
@@ -31,6 +35,19 @@ class Add extends Component {
         state[e.target.name] = e.target.value;
         this.setState(state);
     }
+
+   
+
+    componentDidMount()
+    {
+        Axios.get('http://localhost:5600/d/').then((result)=>
+        {
+            this.setState({
+                deptArr:result.data.depts
+            })
+        })
+    };
+
 
     onSubmit = (e) => {
         e.preventDefault();
@@ -53,6 +70,7 @@ class Add extends Component {
         this.props.history.push('/show')
     }
 
+  
 
     //function to show an alert based on button click.
     msgOnFill() {
@@ -63,20 +81,18 @@ class Add extends Component {
             alert('Employee added sucessfully.')
         }
 
-
-
     }
 
 
     render() {
-
-        //for local API
+   
         let { empName, empDesg, empEmail, empDept } = this.state;
-        // let deptArray=[];
-        // deptArray=['Development', 'Designing', 'Marketing', 'Suport']
+    
+        // let opts = this.state.deptArr.map(function (dept) {
+        //     return dept.name;
+    // });
         return (
 
-            //for local API
             <div class="container">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -108,8 +124,8 @@ class Add extends Component {
                             </select> */}
                                
 
-                            
                                 <input type="text" class="form-control" name="empDept" value={empDept} onChange={this.dataChange} placeholder="Enter Employee Deprtment" />
+            
                             </div>
 
 
@@ -121,69 +137,7 @@ class Add extends Component {
             </div>
         );
 
-        // return(
-        //     <Container className="App">
-
-        //     <h2>Add Employee</h2>
-        //     <h4 align='left'><Link to="/show"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Display Employees</Link></h4>
-        //     <Form className="form" onSubmit={this.onSubmit}>
-        //       <Col>
-        //         <FormGroup>
-        //           <Label>Name</Label>
-        //           <Input
-        //             type="text"
-        //             name="name"
-        //             id="name"
-        //             placeholder="Add Your Name"
-        //             value={empName}
-        //             onChange={this.dataChange}
-        //           />
-        //         </FormGroup>
-        //       </Col>
-        //       <Col>
-        //         <FormGroup>
-        //           <Label>Email</Label>
-        //           <Input
-        //             type="email"
-        //             name="email"
-        //             id="exampleEmail"
-        //             placeholder="Add Your Email"
-        //             value={empEmail}
-        //             onChange={this.dataChange}
-        //           />
-        //         </FormGroup>
-        //       </Col>
-        //       <Col>
-        //         <FormGroup>
-        //           <Label>Designation</Label>
-        //           <Input
-        //             type="text"
-        //             name="desg"
-        //             id="desg"
-        //             placeholder="Add Your Designation"
-        //             value={empDesg}
-        //             onChange={this.dataChange}
-        //           />
-        //         </FormGroup>
-        //       </Col>
-        //       <Col>
-        //         <FormGroup>
-        //           <Label>Department</Label>
-        //           <Input
-        //             type="text"
-        //             name="dept"
-        //             id="dept"
-        //             placeholder="Add Your Department"
-        //             value={empDept}
-        //             onChange={this.dataChange}
-        //           />
-        //         </FormGroup>
-        //       </Col>
-              
-        //       <Button disabled={!empEmail || !empName || !empDesg || !empDept } onClick={this.msgOnFill}>Add Employee</Button>
-        //     </Form>
-        //   </Container>
-        // )
+      
     }
 }
 

@@ -66,31 +66,6 @@ import Axios from 'axios';
 
 
         render() {
-            //  this.state.emps.map(emp => {
-            //     return <table padding='2' class="table table-stripe">
-            //     <thead>
-            //         <tr style={{ color: 'DarkOrchid' }}>
-            //             <th>Emp Id</th>
-            //             <th>Emp Name</th>
-            //             <th>Emp Email</th>
-            //             <th>Emp Desg</th>
-            //             <th>Emp Dept </th>
-            //         </tr>
-            //         <p></p>
-            //     </thead>
-            //     <tbody>
-
-            //             <tr style={{ color: 'brown' }} key={emp._id} >
-            //                 <td>{emp.empId}</td>
-            //                 <td>{emp.empName}</td>
-            //                 <td >{emp.empEmail}</td>
-            //                 <td>{emp.empDesg}</td>
-            //                 <td>{emp.empDept}</td>
-            //             </tr>
-            //     </tbody>
-            // </table>
-            //   });
-
           
               return (
                 <div className="container">
@@ -100,7 +75,6 @@ import Axios from 'axios';
                             </div>
                                 <button type="submit"  onClick={this.nullInput} class="btn btn-default">Reset</button>
                                 
-                                {/* <button type="submit" style={{marginBlock:'20 px',alignSelf:'right'}} onClick={this.nullInput} class="btn btn-default">Search</button> */}
                             </div>
 
 
@@ -128,8 +102,6 @@ import Axios from 'axios';
                                             <td >{emp.empEmail}</td>
                                             <td>{emp.empDesg}</td>
                                             <td>{emp.empDept}</td>
-                                           {/* <td><Link to={'/edit/'+emp._id}>Edit</Link></td> */}
-                                           {/* <td><Link to={'/delete/'+emp._id}>Delete</Link></td> */}
                                         </tr>
                                     )}
                                     
