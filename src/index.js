@@ -6,8 +6,6 @@ import * as serviceWorker from './serviceWorker';
 import Display from './components/empDisplay';
 import Add from './components/empAdd';
 import { Route, Link, NavLink, BrowserRouter as Router } from 'react-router-dom'
-import Demo from './components/demoCom'
-// import QueryComponent from './components/paramsQuery';
 import Edit from './components/empEdit';
 import Delete from './components/empDelete';
 import Search from  './components/search';
@@ -38,7 +36,6 @@ let routing = (
      <Route exact path='/' component={App} />
        <Route path='/add/' component={Add} />
       <Route path='/show' component={Display} />
-      <Route path='/demo' component={Demo} />
       <Route path='/edit/:id' component={Edit}/>
       <Route path='/delete/:id' component={Delete}/>
       <Route path='/viewById/:id' component={EmpView}/>
