@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Select from 'react-select';
 import Axios from 'axios';
-
+import AddForm from 'axios';
 
 // import {
 //     Container, Col, Form,
@@ -21,6 +21,7 @@ class Add extends Component {
             empDesg: '',
             empDept: '',
             deptArr:[],
+            employee:{}
             // selectedData:''
         }
         this.onSubmit = this.onSubmit.bind(this);
@@ -53,15 +54,16 @@ class Add extends Component {
         e.preventDefault();
 
         //for local API
-        let { empName, empDesg, empEmail, empDept } = this.state;
+        let { empName, empDesg, empEmail, empDept } = this.state.employee;
         axios.post('http://localhost:5600/emp', { empName, empEmail, empDept, empDesg })
             .then((result) => {
                 console.log(result)
                 this.setState({
-                    empName: '',
-                    empEmail: '',
-                    empDesg: '',
-                    empDept: '',
+                    // empName: '',
+                    // empEmail: '',
+                    // empDesg: '',
+                    // empDept: '',
+                    employee: {},
                     deptArray:[]
                 })
             });
@@ -76,7 +78,7 @@ class Add extends Component {
     msgOnFill() {
 
         //for local API
-        let { empName, empDesg, empEmail, empDept } = this.state;
+        let { empName, empDesg, empEmail, empDept } = this.state.employee;
         if (empName !== '' && empEmail !== '' && empDept !== '' || empDesg == '') {
             alert('Employee added sucessfully.')
         }
@@ -136,7 +138,17 @@ class Add extends Component {
                 </div>
             </div>
         );
+        // let myObj={};
+        // myObj.empName=this.state.empName;
+        // myObj.empDept=this.state.empDept;
+        // myObj.empDesg=this.state.empDesg;
+        // myObj.empEmail=this.state.empEmail;
 
+        // console.log(myObj)
+
+        // return(
+        //     <AddForm msgOnFill={this.msgOnFill} dataChange={this.dataChange} onSubmit={this.onSubmit}  emp={this.state.employee} />
+        // )
       
     }
 }
