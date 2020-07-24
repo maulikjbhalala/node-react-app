@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Axios from 'axios';
-import {Link} from 'react-router-dom';
+import ViewLoad from './viewLoad';
 
 
 class EmpView extends React.Component{
@@ -30,50 +30,53 @@ class EmpView extends React.Component{
 
     render()
     {
-        let {empDept,empId,empEmail,empName,empDesg,_id}=this.state.emp;
+    //     let {empDept,empId,empEmail,empName,empDesg,_id}=this.state.emp;
        
-        return(
-            <div className="container">
-            <div className="panel panel-default">
-                <div className="panel-heading">
-                    <h3 className="panel-title">
-                        <center style={{ color: 'Blue' }}>{empName}</center>
-                    </h3>
-                </div>
-                <div>
+    //     return(
+    //         <div className="container">
+    //         <div className="panel panel-default">
+    //             <div className="panel-heading">
+    //                 <h3 className="panel-title">
+    //                     <center style={{ color: 'Blue' }}>{empName}</center>
+    //                 </h3>
+    //             </div>
+    //             <div>
        
-       </div>
-                <div className="panel-body">
-                <h4 ><Link to="/show"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Display Employees</Link></h4>
-                    <table padding='2' class="table table-stripe">
-                        <thead>
-                            <tr style={{ color: 'DarkOrchid' }}>
-                                <th>Emp Id</th>
-                                <th>Emp Name</th>
-                                <th>Emp Email</th>
-                                <th>Emp Desg</th>
-                                <th>Emp Dept </th>
-                            </tr>
-                            <p></p>
-                        </thead>
-                        <tbody>
-                                <tr style={{ color: 'brown' }} key={_id} >
-                                    <td>{empId}</td>
-                                    <td>{empName}</td>
-                                    <td >{empEmail}</td>
-                                    <td>{empDesg}</td>
-                                    <td>{empDept}</td>
+    //    </div>
+    //             <div className="panel-body">
+    //             <h4 ><Link to="/show"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Display Employees</Link></h4>
+    //                 <table padding='2' class="table table-stripe">
+    //                     <thead>
+    //                         <tr style={{ color: 'DarkOrchid' }}>
+    //                             <th>Emp Id</th>
+    //                             <th>Emp Name</th>
+    //                             <th>Emp Email</th>
+    //                             <th>Emp Desg</th>
+    //                             <th>Emp Dept </th>
+    //                         </tr>
+    //                         <p></p>
+    //                     </thead>
+    //                     <tbody>
+    //                             <tr style={{ color: 'brown' }} key={_id} >
+    //                                 <td>{empId}</td>
+    //                                 <td>{empName}</td>
+    //                                 <td >{empEmail}</td>
+    //                                 <td>{empDesg}</td>
+    //                                 <td>{empDept}</td>
 
-                                    <td><Link to={'/view?name='+empName}>View More</Link></td>
-                                </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+    //                                 <td><Link to={'/view?name='+empName}>View More</Link></td>
+    //                             </tr>
+    //                     </tbody>
+    //                 </table>
+    //             </div>
+    //         </div>
       
        
-        </div>
-        );
+    //     </div>
+    //     );
+    return(
+         <ViewLoad emp={this.state.emp}/>
+     );
     }
 
 };
