@@ -3,8 +3,6 @@ import {Link} from 'react-router-dom';
 
 class EditFormLoad extends React.Component
 {
-
-
     constructor(props)
     {
         super(props);
