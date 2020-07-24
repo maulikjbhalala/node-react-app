@@ -66,9 +66,9 @@ ReactDOM.render(
 // ReactDOM.render(<Query/>,document.getElementById('root'));
 
 
-//functional component
+// functional component
 // ReactDOM.render(
-//   <Func/>,document.getElementById('root')
+//   <GetFunctional/>,document.getElementById('root')
 // )
 
 
