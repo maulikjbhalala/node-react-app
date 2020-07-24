@@ -4,11 +4,6 @@ import AddForm from './addFormLoad';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
 
-// import {
-//     Container, Col, Form,
-//     FormGroup, Label, Input,
-//     Button,
-//   } from 'reactstrap';
 
 class Add extends Component {
     constructor() {
@@ -43,6 +38,7 @@ class Add extends Component {
         })
     };
 
+    
 
     onSubmit = (e) => {
         e.preventDefault();
@@ -59,7 +55,8 @@ class Add extends Component {
 
         //render to show - display users screen on submit click.
         this.props.history.push('/show')
-        NotificationManager.success('New Employee added sucessfully', 'New Employee');
+        // NotificationManager.success('New Employee added sucessfully', 'New Employee');
+        
     }
 
   
@@ -72,7 +69,8 @@ class Add extends Component {
         //     alert('Employee added sucessfully.')
         // }
 
-        NotificationManager.success('New Employee added sucessfully', 'New Employee');
+    
+
 
     }
 

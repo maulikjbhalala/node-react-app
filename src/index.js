@@ -28,6 +28,7 @@ const Query=React.lazy(()=>import('./components/query'));
 const Filter=React.lazy(()=>import('./components/empFilter'));
 const EmpView=React.lazy(()=>import('./components/empView'));
 const Paginate=React.lazy(()=>import('./components/empPagination'));
+const PageEmp=React.lazy(()=>import('./components/comp-1'));
 
 let routing = (
   <React.Suspense fallback={<div>
@@ -46,7 +47,8 @@ let routing = (
            <li><a aria-current="true" class="active" href="/show">Display Employees</a></li> 
            <li><a aria-current="true" class="active" href="/filter">Search Employee</a></li> 
         <li><a aria-current="true" class="active" href="/page">Pagination</a></li> 
-          <li><a aria-current="true" class="active" href="/myDemo">new page</a></li>
+          {/* <li><a aria-current="true" class="active" href="/myDemo">new page</a></li> */}
+          <li><a aria-current="true" class="active" href="/myPage">react pagination</a></li>
         </ul>
       </div>
 
@@ -59,6 +61,7 @@ let routing = (
      <Route path='/filter' component={Filter}/>
       <Route exact path='/view/' component={Query}/>
       <Route  path='/page/:limit/:pageNo' component={Paginate}/>
+      <Route path='/myPage' component={PageEmp}/>
       {/* <Route path='/myDemo' component={NewPagi}></Route> */}
 
 

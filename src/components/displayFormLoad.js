@@ -1,28 +1,24 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 import LoadingSpinner from './dataLoader'
-
+import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
 import VisibilityIcon from '@material-ui/icons/Visibility';
-const LoadOnButton =React.lazy(()=>import('./getEmployeesOnButtonLoad'));
-
 
 //functional components with props handling
 const DisplayFormLoad=({buttonClick,emps,loading})=>
 {
         return (
             <div className="container">
-            <Suspense fallback={<div>
-                <p style={{color:'green'}}>
-                Wait Button is loading.
-                </p>
-            </div>}>
-                <LoadOnButton buttonClick={buttonClick}/>
-            </Suspense>
+                  <div className="panel-body">
+                  <div  className="panel-body">
+            <Button variant="outline-success" onClick={buttonClick}>Fetch Data</Button>
+                </div>
+                  </div>
                
                 
         {loading?<LoadingSpinner/>: <div className="panel panel-default">

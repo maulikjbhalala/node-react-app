@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 
 const EmployeeLoad=({buttonClick})=>
 {
-    return(
+             return(
                  <div className="panel-body">
                   <div  className="panel-body">
                 <Button variant="outline-success" onClick={buttonClick}>Fetch Data</Button>

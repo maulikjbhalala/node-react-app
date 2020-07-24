@@ -2,7 +2,6 @@ import React, { Suspense } from 'react';
 import Axios from 'axios';
 const FilterLoad = React.lazy(() => import('./filterLoad'));
 
-
     class FilterClass extends React.Component{
         constructor()
         {
@@ -16,7 +15,6 @@ const FilterLoad = React.lazy(() => import('./filterLoad'));
             this.dataChange=this.dataChange.bind(this);
             this.nullInput=this.nullInput.bind(this);
         };
-
 
         filterFunc()
         {

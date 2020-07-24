@@ -19,22 +19,22 @@ const AddForm=({dataChange,msgOnFill,onSubmit})=>
                     <form onSubmit={onSubmit}>
                         <div class="form-group">
                             <label for="empName">Employee Name:</label>
-                            <input type="text" class="form-control" name="empName"  onChange={dataChange} placeholder="Enter Employee Name" />
+                            <input type="text" class="form-control" name="empName" required onChange={dataChange} placeholder="Enter Employee Name" />
                         </div>
                         <div class="form-group">
                             <label for="empEmail">Employee Email:</label>
-                            <input type="email" class="form-control" name="empEmail" onChange={dataChange} placeholder="Enter Employee Email Address" />
+                            <input type="email" class="form-control" name="empEmail" required onChange={dataChange} placeholder="Enter Employee Email Address" />
                         </div>
                         <div class="form-group">
                             <label for="empDesg">Designation:</label>
-                            <input type="text" class="form-control" name="empDesg" onChange={dataChange} placeholder="Enter Designation" />
+                            <input type="text" class="form-control" name="empDesg" required onChange={dataChange} placeholder="Enter Designation" />
                         </div>
                         <div class="form-group">
                         <label for="empDept">Department:</label>
                         {/* <select class="form-control"  value={empDept}>
                              { deptArray.map((dept) => <option key={dept}  onChange={this.dataChange}>{dept}</option>)} 
                         </select> */}
-                            <input type="text" class="form-control" name="empDept" onChange={dataChange} placeholder="Enter Employee Deprtment" />
+                            <input type="text" class="form-control" name="empDept" required onChange={dataChange} placeholder="Enter Employee Deprtment" />
         
                         </div>
 
