@@ -30,7 +30,11 @@ const EmpView=React.lazy(()=>import('./components/empView'));
 const Paginate=React.lazy(()=>import('./components/empPagination'));
 
 let routing = (
-  <React.Suspense fallback={<div>Loading...</div>}>
+  <React.Suspense fallback={<div>
+    <p>
+      Menu is loading.
+    </p>
+  </div>}>
  <Router>
     <div>
       <div>

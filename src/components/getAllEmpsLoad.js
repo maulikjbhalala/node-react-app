@@ -1,17 +1,18 @@
-import React from 'react';
-
+import React, { Suspense } from 'react';
+const BoxLoad=React.lazy(()=>import('./searchBox'));
 
 const EmpsLoad =({emps,q,dataChange,nullInput})=>
 {
     return(
         <div className="container">
-        <div>
-                <div class="form-group">
-                    <input type="text" class="form-control" name="empName" value={q} onChange={dataChange} placeholder="Enter Employee Name to search here" />
-                </div>
-                    <button type="submit"  onClick={nullInput} class="btn btn-default">Reset</button>
-                    
-                </div>
+
+                <Suspense fallback={<div>
+                    <p style={{color:'green'}}>
+                        Filter is loading.
+                    </p>
+                </div>}>
+                    <BoxLoad q={q} dataChange={dataChange}  nullInput={null}/>
+                </Suspense>
 
    
     <div className="panel panel-default">
@@ -41,9 +42,6 @@ const EmpsLoad =({emps,q,dataChange,nullInput})=>
                                 <td>{emp.empDept}</td>
                             </tr>
                         )}
-                        {/* <Suspense fallback={<p> Still Loading..</p>}>
-                            <GetLoadData emps={emps}/>
-                        </Suspense> */}
                         
                     </tbody>
                 </table>

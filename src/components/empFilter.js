@@ -73,7 +73,7 @@ const FilterLoad = React.lazy(() => import('./filterLoad'));
         render() {
           
               return (
-                  <Suspense fallback={<p>It is Loading..</p>}>
+                  <Suspense fallback={<p>Wait Search box and Filter are Loading..</p>}>
             <FilterLoad dataChange={this.dataChange} emps={this.state.emps} nullInput={this.nullInput} q={this.state.q}/> 
                   </Suspense>
            
