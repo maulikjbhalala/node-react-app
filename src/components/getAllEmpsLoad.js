@@ -11,7 +11,7 @@ const EmpsLoad =({emps,q,dataChange,nullInput})=>
                         Filter is loading.
                     </p>
                 </div>}>
-                    <BoxLoad q={q} dataChange={dataChange}  nullInput={null}/>
+                    <BoxLoad q={q} dataChange={dataChange}  nullInput={nullInput}/>
                 </Suspense>
 
    
