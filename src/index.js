@@ -1,24 +1,37 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+// import App from './App';
 import * as serviceWorker from './serviceWorker';
-import Display from './components/empDisplay';
-import Add from './components/empAdd';
+// import Display from './components/empDisplay';
+// import Add from './components/empAdd';
 import { Route, Link, NavLink, BrowserRouter as Router } from 'react-router-dom'
-import Edit from './components/empEdit';
-import Delete from './components/empDelete';
-import Search from  './components/search';
-import Query from './components/query'
+// import Edit from './components/empEdit';
+// import Delete from './components/empDelete';
+// import Search from  './components/search';
+// import Query from './components/query'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Filter from './components/empFilter';
-import EmpView from './components/empView';
-import Paginate from './components/empPagination';
+// import Filter from './components/empFilter';
+// import EmpView from './components/empView';
+// import Paginate from './components/empPagination';
 import Func from './components/addFunctional'
 import GetFunctional from './components/mountGetFunctional';
 
+// lazy components
+const App = React.lazy(() => import('./App'));
+const Display=React.lazy(()=>import('./components/empDisplay'));
+const Add=React.lazy(()=>import('./components/empAdd'));
+const Edit=React.lazy(()=>import('./components/empEdit'));
+const Delete=React.lazy(()=>import('./components/empDelete'));
+const Search=React.lazy(()=>import('./components/search'));
+const Query=React.lazy(()=>import('./components/query'));
+const Filter=React.lazy(()=>import('./components/empFilter'));
+const EmpView=React.lazy(()=>import('./components/empView'));
+const Paginate=React.lazy(()=>import('./components/empPagination'));
+
 let routing = (
-  <Router>
+  <React.Suspense fallback={<div>Loading...</div>}>
+ <Router>
     <div>
       <div>
         <ul className="header">
@@ -47,6 +60,8 @@ let routing = (
 
    </div>
   </Router>
+  </React.Suspense>
+ 
 );
 
 
