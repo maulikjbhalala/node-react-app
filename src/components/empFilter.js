@@ -1,5 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
+import FilterLoad from './filterLoad';
     class FilterClass extends React.Component{
         constructor()
         {
@@ -68,50 +69,51 @@ import Axios from 'axios';
         render() {
           
               return (
-                <div className="container">
-                    <div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="empName" value={this.state.q} onChange={this.dataChange} placeholder="Enter Employee Name to search here" />
-                            </div>
-                                <button type="submit"  onClick={this.nullInput} class="btn btn-default">Reset</button>
+            //     <div className="container">
+            //         <div>
+            //                 <div class="form-group">
+            //                     <input type="text" class="form-control" name="empName" value={this.state.q} onChange={this.dataChange} placeholder="Enter Employee Name to search here" />
+            //                 </div>
+            //                     <button type="submit"  onClick={this.nullInput} class="btn btn-default">Reset</button>
                                 
-                            </div>
+            //                 </div>
 
 
-                    <div className="panel panel-default">
-                        <div>
-               </div>
-                        <div className="panel-body">
-                            <table padding='2' class="table table-stripe">
-                                <thead>
-                                    <tr style={{ color: 'DarkOrchid' }}>
-                                        <th>Emp Id</th>
-                                        <th>Emp Name</th>
-                                        <th>Emp Email</th>
-                                        <th>Emp Desg</th>
-                                        <th>Emp Dept </th>
-                                    </tr>
-                                    <p></p>
-                                </thead>
-                                <tbody>
+            //         <div className="panel panel-default">
+            //             <div>
+            //    </div>
+            //             <div className="panel-body">
+            //                 <table padding='2' class="table table-stripe">
+            //                     <thead>
+            //                         <tr style={{ color: 'DarkOrchid' }}>
+            //                             <th>Emp Id</th>
+            //                             <th>Emp Name</th>
+            //                             <th>Emp Email</th>
+            //                             <th>Emp Desg</th>
+            //                             <th>Emp Dept </th>
+            //                         </tr>
+            //                         <p></p>
+            //                     </thead>
+            //                     <tbody>
     
-                                    { this.state.emps.map(emp =>
-                                        <tr style={{ color: 'brown' }} key={emp._id} >
-                                            <td>{emp.empId}</td>
-                                            <td>{emp.empName}</td>
-                                            <td >{emp.empEmail}</td>
-                                            <td>{emp.empDesg}</td>
-                                            <td>{emp.empDept}</td>
-                                        </tr>
-                                    )}
+            //                         { this.state.emps.map(emp =>
+            //                             <tr style={{ color: 'brown' }} key={emp._id} >
+            //                                 <td>{emp.empId}</td>
+            //                                 <td>{emp.empName}</td>
+            //                                 <td >{emp.empEmail}</td>
+            //                                 <td>{emp.empDesg}</td>
+            //                                 <td>{emp.empDept}</td>
+            //                             </tr>
+            //                         )}
                                     
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+            //                     </tbody>
+            //                 </table>
+            //             </div>
+            //         </div>
               
                
-                </div>
+            //     </div>
+            <FilterLoad dataChange={this.dataChange} emps={this.state.emps} nullInput={this.nullInput} q={this.state.q}/>
     
             )
           

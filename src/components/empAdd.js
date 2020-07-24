@@ -16,10 +16,6 @@ class Add extends Component {
     constructor() {
         super();
         this.state = {
-            empName: '',
-            empEmail: '',
-            empDesg: '',
-            empDept: '',
             deptArr:[],
             employee:{}
             // selectedData:''
@@ -32,7 +28,7 @@ class Add extends Component {
 
     //This function will store form value in state.
     dataChange = (e) => {
-        let state = this.state
+        let state = this.state.employee;
         state[e.target.name] = e.target.value;
         this.setState(state);
     }
@@ -59,10 +55,6 @@ class Add extends Component {
             .then((result) => {
                 console.log(result)
                 this.setState({
-                    // empName: '',
-                    // empEmail: '',
-                    // empDesg: '',
-                    // empDept: '',
                     employee: {},
                     deptArray:[]
                 })
@@ -88,7 +80,7 @@ class Add extends Component {
 
     render() {
    
-        let { empName, empDesg, empEmail, empDept } = this.state;
+        let { empName, empDesg, empEmail, empDept } = this.state.employee;
     
         // let opts = this.state.deptArr.map(function (dept) {
         //     return dept.name;
