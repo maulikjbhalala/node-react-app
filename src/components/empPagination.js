@@ -85,7 +85,8 @@ class Pagi extends React.Component
                                     <td>{emp.empName}</td>
                                     <td >{emp.empEmail}</td>
                                 </tr>
-                            )}
+                            )}pes.bool	The props should be a boolean.
+                            4.	Pro
                         </tbody>
                     </table>
                 </div>

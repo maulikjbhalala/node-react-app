@@ -17,9 +17,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Func from './components/functional/addFunctional'
 import GetFunctional from './components/functional/mountGetFunctional';
 import RefCom from './components/ref/refComponent';
-import FragCom from './components/fragment';
+import FragCom from './components/fragment/fragment';
 import HocCom from './components/HocComponent';
 import UnControlled from './components/uncontrolled/unControlledForm';
+import propParent from './components/functional/propParent';
 
 // lazy components
 const App = React.lazy(() => import('./App'));
@@ -54,6 +55,7 @@ let routing = (
           <li><a aria-current="true" class="active" href="/myPage">react pagination</a></li>
           <li><a aria-current="true" class="active" href="/ref">react ref</a></li>
           <li><a aria-current="true" class="active" href="/uncon">Uncontrolled</a></li>
+          <li><a aria-current="true" class="active" href="/props">Props Validation</a></li>
         </ul>
       </div>
 
@@ -69,6 +71,7 @@ let routing = (
       <Route path='/myPage' component={PageEmp}/>
       <Route path='/ref/' component={RefCom}/>
       <Route path='/uncon/' component={UnControlled}/>
+      <Route path='/props/' component={propParent}/>
       {/* <Route path='/myDemo' component={NewPagi}></Route> */}
 
 
