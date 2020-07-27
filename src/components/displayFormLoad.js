@@ -8,6 +8,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
 import VisibilityIcon from '@material-ui/icons/Visibility';
+import NotFoundComponent from './dataNotFound';
+
 
 //functional components with props handling
 const DisplayFormLoad=({buttonClick,emps,loading})=>
@@ -45,7 +47,7 @@ const DisplayFormLoad=({buttonClick,emps,loading})=>
                             </thead>
                             <tbody>
 
-                                {emps.length===0 ?<div>data not found</div>:emps.map(emp =>
+                                {emps.length===0 ?<NotFoundComponent/>:emps.map(emp =>
                                     <tr style={{ color: 'brown' }} key={emp._id} >
                                         <td>{emp.empName}</td>
                                         <td >{emp.empEmail}</td>
