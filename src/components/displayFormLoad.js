@@ -45,7 +45,7 @@ const DisplayFormLoad=({buttonClick,emps,loading})=>
                             </thead>
                             <tbody>
 
-                                {emps.map(emp =>
+                                {emps.length===0 ?<div>data not found</div>:emps.map(emp =>
                                     <tr style={{ color: 'brown' }} key={emp._id} >
                                         <td>{emp.empName}</td>
                                         <td >{emp.empEmail}</td>
