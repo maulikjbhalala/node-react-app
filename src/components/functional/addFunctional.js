@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import FormCom from './formFunctional'
 import FormFunc from './formFunctional';
 
 //write component function by ES6 syntax
