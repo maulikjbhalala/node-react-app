@@ -1,6 +1,8 @@
 import React from 'react';
 import  './comp-1.css';
 import Axios from 'axios';
+import ErrorBound from './compo1';
+import Comp2 from './compo2';
 
 
     class TodoApp extends React.Component {
@@ -101,7 +103,17 @@ import Axios from 'axios';
             <ul id="page-numbers">
               {renderPageNumbers}
             </ul>
+            <ErrorBound>
+            <Comp2 data='mydatas'></Comp2>
+            </ErrorBound>
+
+            <ErrorBound>
+            <Comp2 data='myData'></Comp2>
+            </ErrorBound>
+           
+           
           </div>
+
         );
       }
     }
