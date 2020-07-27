@@ -16,17 +16,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import Paginate from './components/empPagination';
 import Func from './components/addFunctional'
 import GetFunctional from './components/mountGetFunctional';
+import RefCom from './components/refComponent';
 
 // lazy components
 const App = React.lazy(() => import('./App'));
-const Display=React.lazy(()=>import('./components/empDisplay'));
-const Add=React.lazy(()=>import('./components/empAdd'));
-const Edit=React.lazy(()=>import('./components/empEdit'));
-const Delete=React.lazy(()=>import('./components/empDelete'));
+const Display=React.lazy(()=>import('./components/display/empDisplay'));
+const Add=React.lazy(()=>import('./components/add/empAdd'));
+const Edit=React.lazy(()=>import('./components/edit/empEdit'));
+const Delete=React.lazy(()=>import('./components/delete/empDelete'));
 const Search=React.lazy(()=>import('./components/search'));
-const Query=React.lazy(()=>import('./components/query'));
-const Filter=React.lazy(()=>import('./components/empFilter'));
-const EmpView=React.lazy(()=>import('./components/empView'));
+const Query=React.lazy(()=>import('./components/singleView/query'));
+const Filter=React.lazy(()=>import('./components/search/empFilter'));
+const EmpView=React.lazy(()=>import('./components/singleView/empView'));
 const Paginate=React.lazy(()=>import('./components/empPagination'));
 const PageEmp=React.lazy(()=>import('./components/comp-1'));
 
@@ -49,6 +50,7 @@ let routing = (
         <li><a aria-current="true" class="active" href="/page">Pagination</a></li> 
           {/* <li><a aria-current="true" class="active" href="/myDemo">new page</a></li> */}
           <li><a aria-current="true" class="active" href="/myPage">react pagination</a></li>
+          <li><a aria-current="true" class="active" href="/ref">react ref</a></li>
         </ul>
       </div>
 
@@ -62,6 +64,7 @@ let routing = (
       <Route exact path='/view/' component={Query}/>
       <Route  path='/page/:limit/:pageNo' component={Paginate}/>
       <Route path='/myPage' component={PageEmp}/>
+      <Route path='/ref/' component={RefCom}/>
       {/* <Route path='/myDemo' component={NewPagi}></Route> */}
 
 
