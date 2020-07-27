@@ -18,6 +18,8 @@ import Func from './components/functional/addFunctional'
 import GetFunctional from './components/functional/mountGetFunctional';
 import RefCom from './components/ref/refComponent';
 import FragCom from './components/fragment';
+import HocCom from './components/HocComponent';
+import UnControlled from './components/uncontrolled/unControlledForm';
 
 // lazy components
 const App = React.lazy(() => import('./App'));
@@ -51,6 +53,7 @@ let routing = (
           {/* <li><a aria-current="true" class="active" href="/myDemo">new page</a></li> */}
           <li><a aria-current="true" class="active" href="/myPage">react pagination</a></li>
           <li><a aria-current="true" class="active" href="/ref">react ref</a></li>
+          <li><a aria-current="true" class="active" href="/uncon">Uncontrolled</a></li>
         </ul>
       </div>
 
@@ -65,6 +68,7 @@ let routing = (
       <Route  path='/page/:limit/:pageNo' component={Paginate}/>
       <Route path='/myPage' component={PageEmp}/>
       <Route path='/ref/' component={RefCom}/>
+      <Route path='/uncon/' component={UnControlled}/>
       {/* <Route path='/myDemo' component={NewPagi}></Route> */}
 
 
@@ -98,6 +102,9 @@ ReactDOM.render(
 // ReactDOM.render(<GetFunctional/>,document.getElementById('root'));
 
 // ReactDOM.render(<FragCom/>,document.getElementById('root'));
+
+
+// ReactDOM.render(<HocCom/>,document.getElementById('root'));
 
 
 // If you want your app to work offline and load faster, you can change
