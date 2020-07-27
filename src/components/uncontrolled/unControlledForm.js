@@ -9,20 +9,19 @@ export default class unControlledForm extends Component {
         }
         this.onButtonHandle=this.onButtonHandle.bind(this);
         this.txtBoxRef=React.createRef();
+        this.fileREf=React.createRef()
 
     }
     
     onButtonHandle()
     {
-        this.setState({
-            name:this.txtBoxRef.current.value,
-        });
-        console.log('name is',this.state.name)
+        // this.setState({
+        //     name:this.txtBoxRef.current.value,
+        // });
+        alert('file name is'+ ' '+this.fileREf.current.files[0].name)
     }
   
     render() {
-        
-        console.log(' data at this stage is',this.state.name)
         return (
             <div>
                 <form>
@@ -31,6 +30,13 @@ export default class unControlledForm extends Component {
                     </br>
                     <p>
                         <input type='text' name='name' ref={this.txtBoxRef} placeholder='enter name'/>
+                    </p>
+                    <br>
+                    </br>
+
+
+                    <p>
+                        <input type='file' name='file' ref={this.fileREf} placeholder='upload file'/>
                     </p>
                     <br>
                     </br>
