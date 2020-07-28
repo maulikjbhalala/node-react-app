@@ -23,6 +23,7 @@ import UnControlled from './components/uncontrolled/unControlledForm';
 import propParent from './components/propsValidation/propParent';
 // import MyContext from './components/contextFile'
 import ContextComp from './components/context/contextProvider';
+import FormContext from './components/context/formProvider'
 
 // lazy components
 const App = React.lazy(() => import('./App'));
@@ -59,6 +60,7 @@ let routing = (
           <li><a aria-current="true" class="active" href="/uncon">Uncontrolled</a></li>
           <li><a aria-current="true" class="active" href="/props">Props Validation</a></li>
           <li><a aria-current="true" class="active" href="/context">Context </a></li>
+          <li><a aria-current="true" class="active" href="/formContext">Context  Form</a></li>
         </ul>
       </div>
 
@@ -76,6 +78,7 @@ let routing = (
       <Route path='/uncon/' component={UnControlled}/>
       <Route path='/props/' component={propParent}/>
       <Route path='/context/' component={ContextComp}/>
+      <Route path='/formContext/' component={FormContext}/>
       {/* <Route path='/myDemo' component={NewPagi}></Route> */}
 
 
