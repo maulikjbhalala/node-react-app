@@ -20,7 +20,9 @@ import RefCom from './components/ref/refComponent';
 import FragCom from './components/fragment/fragment';
 import HocCom from './components/HocComponent';
 import UnControlled from './components/uncontrolled/unControlledForm';
-import propParent from './components/functional/propParent';
+import propParent from './components/propsValidation/propParent';
+// import MyContext from './components/contextFile'
+import ContextComp from './components/contextProvider';
 
 // lazy components
 const App = React.lazy(() => import('./App'));
@@ -56,6 +58,7 @@ let routing = (
           <li><a aria-current="true" class="active" href="/ref">react ref</a></li>
           <li><a aria-current="true" class="active" href="/uncon">Uncontrolled</a></li>
           <li><a aria-current="true" class="active" href="/props">Props Validation</a></li>
+          <li><a aria-current="true" class="active" href="/context">Context </a></li>
         </ul>
       </div>
 
@@ -72,6 +75,7 @@ let routing = (
       <Route path='/ref/' component={RefCom}/>
       <Route path='/uncon/' component={UnControlled}/>
       <Route path='/props/' component={propParent}/>
+      <Route path='/context/' component={ContextComp}/>
       {/* <Route path='/myDemo' component={NewPagi}></Route> */}
 
 
@@ -86,9 +90,7 @@ let routing = (
 
 
 
-ReactDOM.render(
-  routing,
-  document.getElementById('root')
+ReactDOM.render( routing,document.getElementById('root')
 );
 
 

@@ -6,16 +6,26 @@ export default class propParent extends Component {
         super(props)
     
         this.state = {
-             userName:''
+             count:0,
+             name:''
         };
         this.onChangeInput=this.onChangeInput.bind(this);
         this.onClickHandler=this.onClickHandler.bind(this);
+        this.onChangeInputName=this.onChangeInputName.bind(this);
     };
 
     onChangeInput(e)
     {
         this.setState({
-            userName:e.target.value
+            count:e.target.value,
+            // name:'mj'
+        })
+    }
+    onChangeInputName(e)
+    {
+
+        this.setState({
+            name:e.target.value
         })
     }
 
@@ -28,13 +38,17 @@ export default class propParent extends Component {
         return (
             <div>
                 <form>
-                    <label>Name:</label>
-                    <input type='text' name='name' onChange={this.onChangeInput}/> 
+                    <label>count:</label>
+                    <input type='number' name='name' onChange={this.onChangeInput}/> 
+                    <br>
+                    </br>
+                    <label>name:</label>
+                    <input type='text' name='name' onChange={this.onChangeInputName}/> 
                     <br>
                     </br>
                     <button type="button" onClick={this.onClickHandler}>click here</button>   
                 </form>
-                <PropValidateComponent name={this.state.userName}/>
+                <PropValidateComponent count={this.state.count} name={this.state.name} />
             </div>
         )
     }
