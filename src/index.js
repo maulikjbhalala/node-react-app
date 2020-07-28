@@ -22,7 +22,7 @@ import HocCom from './components/HocComponent';
 import UnControlled from './components/uncontrolled/unControlledForm';
 import propParent from './components/propsValidation/propParent';
 // import MyContext from './components/contextFile'
-import ContextComp from './components/contextProvider';
+import ContextComp from './components/context/contextProvider';
 
 // lazy components
 const App = React.lazy(() => import('./App'));
