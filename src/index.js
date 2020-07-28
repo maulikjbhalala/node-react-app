@@ -24,6 +24,7 @@ import propParent from './components/propsValidation/propParent';
 // import MyContext from './components/contextFile'
 import ContextComp from './components/context/contextProvider';
 import FormContext from './components/context/formProvider'
+import RenderPropCo from './components/propRender'
 
 // lazy components
 const App = React.lazy(() => import('./App'));
@@ -61,6 +62,7 @@ let routing = (
           <li><a aria-current="true" class="active" href="/props">Props Validation</a></li>
           <li><a aria-current="true" class="active" href="/context">Context </a></li>
           <li><a aria-current="true" class="active" href="/formContext">Context  Form</a></li>
+          <li><a aria-current="true" class="active" href="/rp">Render Prop</a></li>
         </ul>
       </div>
 
@@ -79,6 +81,7 @@ let routing = (
       <Route path='/props/' component={propParent}/>
       <Route path='/context/' component={ContextComp}/>
       <Route path='/formContext/' component={FormContext}/>
+      <Route path='/rp/' component={RenderPropCo}/>
       {/* <Route path='/myDemo' component={NewPagi}></Route> */}
 
 
