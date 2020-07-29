@@ -1,15 +1,28 @@
 // import React, { Component } from 'react';
-// import {Consumer} from './formContext';
-// import context from 'react-bootstrap/esm/AccordionContext';
+// import Consumer from './formContext';
 
 
 // export default class formConsumer extends Component {
 //     constructor(props) {
 //         super(props)
-//         console.log(props.name)
+//         // console.log(props.name)
 //             this.state = {
-//                  name:props.name
+//                  name:'m'
 //             }
+//     }
+
+//     // componentWillReceiveProps(nextProps)
+//     // {
+//     //     console.log(nextProps)
+//     //     this.setState({name:nextProps.value})
+//     // }
+//     componentWillReceiveProps(prevProps)
+//     {
+//         console.log(prevProps)
+
+//         this.setState({
+//             name:prevProps.value
+//         })
 //     }
     
 //     render() {
@@ -35,6 +48,9 @@
 //                             </br>
 //                             age is: {context.state.age}
 //                         </div>
+//                         <p>
+//                             state name is {this.state.name}
+//                         </p>
 //                     </div>
 
 

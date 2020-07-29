@@ -32,11 +32,11 @@
 
         
         render() {
-                console.log(this.state)
             return (
                     <FormContext.Provider value={{onData:this.onDataChange,onData1:this.onDataChange1,state:this.state}}>
                         <Child/>
                     </FormContext.Provider>
+                    // <Child data={this.state} onDataChange={this.onDataChange} onDataChange1={this.onDataChange1}/>
             )
         }
     }
