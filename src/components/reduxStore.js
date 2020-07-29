@@ -12,18 +12,30 @@ const stateData={
 
 
 
-const reducer=function(state=stateData,action)
+const reducer=(state=stateData,action)=>
 {
-
-    if(action.type==='FIRST_REDUX')
+    switch(action.type)
     {
-        return {data:state.name.concat(action.payload)}
+        case 'FIRST_REDUX':
+            state.name=action.payload.name;
+            state.age=action.payload.age || 20;
+             return state;
+        case 'SECOND_REDUX':
+            state.age=action.payload.age || 21
+            state.name= action.payload.name || 'demo name'
+            return state;
+        default:
+            return state;
     }
-    else if(action.type==='SECOND_REDUX')
-    {
-        return {data:state.age.concat(action.payload)}
-    }
-    return state;
+    // if(action.type==='FIRST_REDUX')
+    // {
+    //     return {data:state.name.concat(action.payload)}
+    // }
+    // else if(action.type==='SECOND_REDUX')
+    // {
+    //     return {data:state.age.concat(action.payload)}
+    // }
+    // return state;
 
 }
 
