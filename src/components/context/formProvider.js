@@ -1,4 +1,4 @@
-  import {Provider} from './formContext';
+  import FormContext from './formContext';
     import React, { Component } from 'react';
     import Child from './formConsumer';
     
@@ -32,13 +32,11 @@
 
         
         render() {
-            
+                console.log(this.state)
             return (
-                    <Provider value={{onData:this.onDataChange,onData1:this.onDataChange1,state:this.state}}>
+                    <FormContext.Provider value={{onData:this.onDataChange,onData1:this.onDataChange1,state:this.state}}>
                         <Child/>
-                    </Provider>
-                
-              
+                    </FormContext.Provider>
             )
         }
     }

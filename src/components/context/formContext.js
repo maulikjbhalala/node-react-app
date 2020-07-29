@@ -1,5 +1,12 @@
-import { createContext } from "react";
+// import { createContext } from "react";
 
-const { Provider, Consumer } = createContext();
+// const { Provider, Consumer } = createContext();
 
-export { Provider, Consumer };
+// export { Provider, Consumer };
+
+import React from 'react';
+
+const FormContext=React.createContext();
+
+
+export default FormContext;
