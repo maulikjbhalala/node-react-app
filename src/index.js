@@ -24,9 +24,11 @@ import propParent from './components/propsValidation/propParent';
 // import MyContext from './components/contextFile'
 import ContextComp from './components/context/contextProvider';
 import FormContext from './components/context/formProvider'
-import RenderPropCo from './components/propRender'
+import RenderPropCo from './components/propRenderParent';
+
 import ReduxStore from './components/reduxStore';
 window.store=ReduxStore
+
 // lazy components
 const App = React.lazy(() => import('./App'));
 const Display=React.lazy(()=>import('./components/display/empDisplay'));
