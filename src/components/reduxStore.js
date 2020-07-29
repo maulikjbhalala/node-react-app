@@ -1,9 +1,5 @@
 import {createStore} from 'redux';
 
-// import StateData from './reduxState';
-
-// import Reducer from './reduxReducer';
-
 const stateData={
 
     name:'',
@@ -27,20 +23,8 @@ const reducer=(state=stateData,action)=>
         default:
             return state;
     }
-    // if(action.type==='FIRST_REDUX')
-    // {
-    //     return {data:state.name.concat(action.payload)}
-    // }
-    // else if(action.type==='SECOND_REDUX')
-    // {
-    //     return {data:state.age.concat(action.payload)}
-    // }
-    // return state;
-
+    
 }
-
-
-
 
 
 
