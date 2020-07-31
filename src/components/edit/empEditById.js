@@ -8,7 +8,7 @@ const EditByIdComp = (props) => {
     const [employee, setEmployee] = useState({});
 
     useEffect(() => {
-
+        
         console.log(window.location.search)
         let id=new URLSearchParams(window.location.search);
         // console.log(id)

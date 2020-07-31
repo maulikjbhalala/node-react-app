@@ -1,19 +1,17 @@
 import React from 'react';
 import NewCon from './contextFile';
 
-class ContextConsumer extends React.Component
-{
+class ContextConsumer extends React.Component {
 
     // const context = useContext(contextValue);
 
-    render()
-    {
+    render() {
 
-        return(
+        return (
             <NewCon>
-               <div>
-            name is {name}
-                </div> 
+                <div>
+                    name is {name}
+                </div>
             </NewCon>
         )
     }

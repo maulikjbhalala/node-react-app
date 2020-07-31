@@ -36,7 +36,6 @@ const Edit = (props) => {
 
 
     const msgOnFill = () => {
-
         if (employee.empName !== '' && employee.empEmail !== '' && employee.empDept !== '' || employee.empDesg == '') {
             alert('Employee Update sucessfully.')
         }

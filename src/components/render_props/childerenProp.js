@@ -14,7 +14,7 @@ class ChildPropFunc extends React.Component
   render() {
     return(
         <div>
-    {this.props.children(this.state.name)}
+    {this.props.name(this.state.name)}
         </div>
         )
   }

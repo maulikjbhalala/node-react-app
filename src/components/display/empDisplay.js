@@ -1,7 +1,8 @@
 import React from 'react';
 
-import axios from 'axios';
+// import axios from 'axios';
 import EmpDisplay from './displayFormLoad'
+import GetEmpService from '../services/getEmpService';
 
 class Display extends React.Component {
     constructor() {
@@ -11,26 +12,27 @@ class Display extends React.Component {
             emps: [],
             loading: false
         };
-        this.onClick=this.onClick.bind(this)
+        this.onClick = this.onClick.bind(this)
     }
 
 
     onClick = () => {
         this.setState({
-            loading:true
-        })
-        axios.get('http://localhost:5600/emp')
-            .then(res => {
-                this.setState({ emps: res.data, loading: false });
-            });
-      }
+            loading: true
+        });
+
+        GetEmpService().then(res => {
+            this.setState({ emps: res.data, loading: false });
+        });
+
+    }
 
 
     render() {
-        return(
-            <EmpDisplay emps={this.state.emps} buttonClick={this.onClick}  loading={this.state.loading}/>
+        return (
+            <EmpDisplay emps={this.state.emps} buttonClick={this.onClick} loading={this.state.loading} />
         )
-     
+
     };
 };
 

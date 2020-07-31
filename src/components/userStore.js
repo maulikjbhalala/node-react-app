@@ -1,6 +1,6 @@
 import {createStore} from 'redux';
 
-import Reducer from './userReducer'
+import Reducer from './userReducer-1'
 
 // const userState={
 //     names:[]
